@@ -1,0 +1,104 @@
+INICIALIZAR UN REPOSITORIO : Crea un directorio llamado .git dentro de la carpeta raiz del proyecto donde estemos ejecutando el comando. Esta carpeta sirve para ir guardando todos los commits(puntos de restauracion), seria como la base de datos. 
+
+
+git init : Crea un repositorio nuevo en .git. Esto controla los cambios generales de la carpeta donde iniciamos el repo, pero no los cambios individuales de los archivos
+
+git add <archivo> : Empieza a darle seguimiento a uno o mas archivos dentro del repositorio. Tambien sirve para pasar un archivo del Working Directory al Stage Area, de esta manera esos cambios en ese archivo se pueden comitear.
+
+
+git config --local user.email "horacio.estevez@gmail.com"
+git config --local user.name "Horacio Gutierrez"
+
+
+git commit : Crea un commit con mensaje escrito en el editor default
+git commit -m "mensaje" : Crea un commit con mensaje inline
+
+git log : Muestra todos los commits de una rama
+git log --oneline : Muestra el log abreviado
+git log --all : Muestra todos los commits 
+
+git checkout <commit> : Puedo moverme a traves de commits
+git checkout <branch> : Puedo moverme a donde este el puntero del branch
+
+
+Ejemplos : 
+git checkout HEAD~1 : Me muevo un commit atras mio 
+
+
+VIM
+
+OBJETOS : 
+
+        tag
+        commits
+            _id
+            _id_parent
+            _subject
+            _email
+            _author
+            _commiter
+            _id_tree
+            _timestamp
+
+        blob
+        tree
+
+
+
+git add
+
+- untracked
+- tracked
+
+
+Working Directory : La carpeta de trabajo
+Stage Area : El screenshot
+
+
+DETACHED HEAD : Estas en modo desacoplado y no podes hacer cambios. 
+
+
+
+DESARROLLO COLABORATIVO DISTRIBUIDO
+
+
+git remote : Muestra un listado de alias de remotos
+git remote -v : Muestra un listado de alias y URLs de remotos
+
+git push : Sube los ultimos cambios de local a remoto. Por defecto busca la configuracion upstream
+
+git push <alias> <branch>: Especificas a que remoto y branch queres subir los cambios
+
+git push --set-upstream <alias> <branch> : Dejas configurado hacia donde vas a pushear; las proximas veces ya no tenes que decirlo. 
+
+
+
+
+master : Representa el codigo de produccion
+
+
+
+BRANCHES : 
+
+git branch <nombre> : Crea un branch a partir del commit donde estas parado
+
+git checkout -b <nombre> : Crea un branch y nos mueve automaticamente
+
+git branch -d|-D <nombre> : Borra un branch
+    
+
+
+https://danielkummer.github.io/git-flow-cheatsheet/
+
+
+
+UNIFICACION DE CAMBIOS : 
+
+- merge : Se suman los commits de uno o mas branches en uno solo
+
+- rebase : Se reubica el origen de branch en otro commit
+
+- cherry-pick : Se copian los cambios del commit de un branch en otro 
+
+git clone : Me crea una carpeta en el lugar en donde yo este parado llamada de la misma manera que se llama el repositorio. Le puedo cambiar el nombre si quiero. Por defecto me trae solo la rama master local y todos los commits de las demas ramas. 
+
